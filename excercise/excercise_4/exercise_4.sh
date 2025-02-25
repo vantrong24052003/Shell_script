@@ -13,7 +13,7 @@ log_info() {
 rollback() {
     log_info "Rollback: Khôi phục từ backup..."
     if [ -d "$backup_dir" ]; then
-        rm -rf "$deploy_dir"
+        rm -rf "$deploy_dir"    
         rsync -av --exclude=node_modules "$backup_dir/" "$deploy_dir/"
         log_info "Rollback thành công!"
     else
