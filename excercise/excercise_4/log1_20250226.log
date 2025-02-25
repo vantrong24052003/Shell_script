@@ -1,0 +1,145 @@
+[20250226-05:36:48] Bắt đầu triển khai branch: main trên môi trường: production
+[20250226-05:36:48] Tạo backup thư mục hiện tại...
+[20250226-05:36:54] Cài đặt dependencies frontend...
+npm WARN using --force Recommended protections disabled.
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @typescript-eslint/eslint-plugin@7.18.0
+npm WARN Found: eslint@9.21.0
+npm WARN node_modules/eslint
+npm WARN   dev eslint@"^9.8.0" from the root project
+npm WARN   7 more (@eslint-community/eslint-utils, ...)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer eslint@"^8.56.0" from @typescript-eslint/eslint-plugin@7.18.0
+npm WARN node_modules/@typescript-eslint/eslint-plugin
+npm WARN   dev @typescript-eslint/eslint-plugin@"^7.18.0" from the root project
+npm WARN 
+npm WARN Conflicting peer dependency: eslint@8.57.1
+npm WARN node_modules/eslint
+npm WARN   peer eslint@"^8.56.0" from @typescript-eslint/eslint-plugin@7.18.0
+npm WARN   node_modules/@typescript-eslint/eslint-plugin
+npm WARN     dev @typescript-eslint/eslint-plugin@"^7.18.0" from the root project
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @typescript-eslint/parser@7.18.0
+npm WARN Found: eslint@9.21.0
+npm WARN node_modules/eslint
+npm WARN   dev eslint@"^9.8.0" from the root project
+npm WARN   7 more (@eslint-community/eslint-utils, ...)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer eslint@"^8.56.0" from @typescript-eslint/parser@7.18.0
+npm WARN node_modules/@typescript-eslint/parser
+npm WARN   dev @typescript-eslint/parser@"^7.18.0" from the root project
+npm WARN   1 more (@typescript-eslint/eslint-plugin)
+npm WARN 
+npm WARN Conflicting peer dependency: eslint@8.57.1
+npm WARN node_modules/eslint
+npm WARN   peer eslint@"^8.56.0" from @typescript-eslint/parser@7.18.0
+npm WARN   node_modules/@typescript-eslint/parser
+npm WARN     dev @typescript-eslint/parser@"^7.18.0" from the root project
+npm WARN     1 more (@typescript-eslint/eslint-plugin)
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: eslint-plugin-react-hooks@4.6.2
+npm WARN Found: eslint@9.21.0
+npm WARN node_modules/eslint
+npm WARN   dev eslint@"^9.8.0" from the root project
+npm WARN   7 more (@eslint-community/eslint-utils, ...)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer eslint@"^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0" from eslint-plugin-react-hooks@4.6.2
+npm WARN node_modules/eslint-plugin-react-hooks
+npm WARN   dev eslint-plugin-react-hooks@"^4.6.2" from the root project
+npm WARN 
+npm WARN Conflicting peer dependency: eslint@8.57.1
+npm WARN node_modules/eslint
+npm WARN   peer eslint@"^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0" from eslint-plugin-react-hooks@4.6.2
+npm WARN   node_modules/eslint-plugin-react-hooks
+npm WARN     dev eslint-plugin-react-hooks@"^4.6.2" from the root project
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @typescript-eslint/type-utils@7.18.0
+npm WARN Found: eslint@9.21.0
+npm WARN node_modules/eslint
+npm WARN   dev eslint@"^9.8.0" from the root project
+npm WARN   7 more (@eslint-community/eslint-utils, ...)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer eslint@"^8.56.0" from @typescript-eslint/type-utils@7.18.0
+npm WARN node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/type-utils
+npm WARN   @typescript-eslint/type-utils@"7.18.0" from @typescript-eslint/eslint-plugin@7.18.0
+npm WARN   node_modules/@typescript-eslint/eslint-plugin
+npm WARN 
+npm WARN Conflicting peer dependency: eslint@8.57.1
+npm WARN node_modules/eslint
+npm WARN   peer eslint@"^8.56.0" from @typescript-eslint/type-utils@7.18.0
+npm WARN   node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/type-utils
+npm WARN     @typescript-eslint/type-utils@"7.18.0" from @typescript-eslint/eslint-plugin@7.18.0
+npm WARN     node_modules/@typescript-eslint/eslint-plugin
+npm WARN ERESOLVE overriding peer dependency
+npm WARN While resolving: @typescript-eslint/utils@7.18.0
+npm WARN Found: eslint@9.21.0
+npm WARN node_modules/eslint
+npm WARN   dev eslint@"^9.8.0" from the root project
+npm WARN   7 more (@eslint-community/eslint-utils, ...)
+npm WARN 
+npm WARN Could not resolve dependency:
+npm WARN peer eslint@"^8.56.0" from @typescript-eslint/utils@7.18.0
+npm WARN node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils
+npm WARN   @typescript-eslint/utils@"7.18.0" from @typescript-eslint/eslint-plugin@7.18.0
+npm WARN   node_modules/@typescript-eslint/eslint-plugin
+npm WARN   1 more (@typescript-eslint/type-utils)
+npm WARN 
+npm WARN Conflicting peer dependency: eslint@8.57.1
+npm WARN node_modules/eslint
+npm WARN   peer eslint@"^8.56.0" from @typescript-eslint/utils@7.18.0
+npm WARN   node_modules/@typescript-eslint/eslint-plugin/node_modules/@typescript-eslint/utils
+npm WARN     @typescript-eslint/utils@"7.18.0" from @typescript-eslint/eslint-plugin@7.18.0
+npm WARN     node_modules/@typescript-eslint/eslint-plugin
+npm WARN     1 more (@typescript-eslint/type-utils)
+
+up to date, audited 468 packages in 1s
+
+156 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[20250226-05:36:56] Build frontend...
+
+> shopee-clone@0.0.0 build
+> tsc -b && vite build
+
+vite v5.4.14 building for production...
+transforming...
+✓ 624 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.46 kB │ gzip:   0.30 kB
+dist/assets/user-D8aBXek0.png    10.11 kB
+dist/assets/index-fW0t2oM7.css   36.25 kB │ gzip:   7.24 kB
+dist/assets/index-BIGqR9F2.js   709.42 kB │ gzip: 242.64 kB
+✓ built in 4.10s
+[20250226-05:37:01] Restart service...
+[20250226-05:37:01] Triển khai thành công!
+
+> shopee-clone@0.0.0 dev
+> vite
+
+Port 3000 is in use, trying another one...
+Port 3001 is in use, trying another one...
+Port 3002 is in use, trying another one...
+Port 3003 is in use, trying another one...
+Port 3004 is in use, trying another one...
+Port 3005 is in use, trying another one...
+Port 3006 is in use, trying another one...
+
+  VITE v5.4.14  ready in 245 ms
+
+  ➜  Local:   http://localhost:3007/
+  ➜  Network: use --host to expose
+
+warn - As of Tailwind CSS v3.3, the `@tailwindcss/line-clamp` plugin is now included by default.
+warn - Remove it from the `plugins` array in your configuration to eliminate this warning.

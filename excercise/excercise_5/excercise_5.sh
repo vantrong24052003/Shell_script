@@ -1,5 +1,4 @@
-#!/bin/bash
-SLACK_KEY="https://hooks.slack.com/services/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"
+SLACK_KEY="https://hooks.slack.com/services/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"
 send_slack_notification() {
   local message="$1"
   curl -X POST -H 'Content-type: application/json' \
