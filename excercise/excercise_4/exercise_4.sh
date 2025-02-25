@@ -1,53 +1,67 @@
 #!/bin/bash
-set -e
-set -o pipefail
-
-CLEAN_URL="$HOME/Documents/shell_script/excercise/excercise_4"
-LOGFILE="$CLEAN_URL/deploy_$(date +%Y%m%d).log"
-BACKUP_DIR="$CLEAN_URL/backend_backup_$(date +%Y%m%d_%H%M%S)"
-DEPLOY_DIR="$CLEAN_URL/backend"
-BRANCH_NAME=$1
-ENVIRONMENT=$2
-
+set -e  # Dừng script nếu có lỗi
+set -o pipefail  # Bắt lỗi trong pipeline
+# Cấu hình đường dẫn
+repo_url="git@github.com:vantrong2405/Project-Shopee-Clone.git"
+deploy_dir="/home/vantrong/Documents/Project-Shopee-Clone"
+backup_dir="/home/vantrong/Documents/shell_script/backup"
+log_file="/home/vantrong/Documents/shell_script/excercise/excercise_4/logEX4_$(date +%Y%m%d).log"
+frontend_dir="$deploy_dir/client"
 log_info() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOGFILE"
+    echo "[$(date +'%Y%m%d-%H:%M:%S')] $1" | tee -a "$log_file"
 }
-
-rollback_function() {
-    log_info "Rollback: Khôi phục từ backup $BACKUP_DIR"
-    rm -rf "$DEPLOY_DIR"
-    cp -r "$BACKUP_DIR" "$DEPLOY_DIR"
-    nohup npm start > "$DEPLOY_DIR/backend.log" 2>&1 &
+rollback() {
+    log_info "Rollback: Khôi phục từ backup..."
+    if [ -d "$backup_dir" ]; then
+        rm -rf "$deploy_dir"
+        rsync -av --exclude=node_modules "$backup_dir/" "$deploy_dir/"
+        log_info "Rollback thành công!"
+    else
+        log_info ":warning: Không tìm thấy backup, không thể rollback!"
+    fi
     exit 1
 }
-
-if [ -z "$BRANCH_NAME" ] || [ -z "$ENVIRONMENT" ]; then
+# Kiểm tra tham số
+branch_name=$1
+env=$2
+if [ -z "$branch_name" ] || [ -z "$env" ]; then
     echo "Usage: $0 <branch_name> <environment>"
     exit 1
 fi
-
-if [ ! -d "$DEPLOY_DIR" ]; then
-    log_info ">>>>>Thư mục $DEPLOY_DIR không tồn tại, tạo mới thư mục"
-    mkdir -p "$DEPLOY_DIR"
+log_info "Bắt đầu triển khai branch: $branch_name trên môi trường: $env"
+# Tạo backup nếu deploy_dir tồn tại
+if [ -d "$deploy_dir" ]; then
+    log_info "Tạo backup thư mục hiện tại..."
+    rm -rf "$backup_dir"
+    rsync -av --exclude=node_modules "$deploy_dir/" "$backup_dir/"
+else
+    log_info ":warning: Không có thư mục deploy để backup!"
 fi
+# Xử lý lỗi
+trap 'log_info "Triển khai thất bại!"; rollback' ERR SIGINT SIGTERM
+# Kiểm tra repo Git
+if [ ! -d "$deploy_dir/.git" ]; then
+    log_info ":warning: Không tìm thấy repo, tiến hành clone..."
+    rm -rf "$deploy_dir"
+    git clone "$repo_url" "$deploy_dir" || { log_info "Lỗi clone repo!"; exit 1; }
+fi
+# Cập nhật code
+git -C "$deploy_dir" fetch origin
+git -C "$deploy_dir" checkout "$branch_name"
+git -C "$deploy_dir" pull origin "$branch_name"
 
-trap 'log_info "Deploy bị gián đoạn"; rollback_function' ERR SIGINT SIGTERM
-
-log_info "Bắt đầu deploy branch $BRANCH_NAME cho môi trường $ENVIRONMENT"
-
-log_info "Backup thư mục backend vào $BACKUP_DIR"
-cp -r "$DEPLOY_DIR" "$BACKUP_DIR"
-
-log_info "Pull code từ Git..."
-
-# git pull origin "$BRANCH_NAME" >> "$LOGFILE" 2>&1
-
-log_info "Build dự án..."
-# mvn clean package >> "$LOGFILE" 2>&1
-
-log_info "Chạy test..."
-# ./run_tests.sh >> "$LOGFILE" 2>&1
-
-log_info "Restart backend-service..."
-# systemctl restart backend-service >> "$LOGFILE" 2>&1
-log_info "Deploy thành công!"
+# Cài đặt dependencies cho Frontend (React)
+log_info "Cài đặt dependencies frontend..."
+if [ -d "$frontend_dir" ]; then
+    cd "$frontend_dir"
+    npm install --force | tee -a "$log_file"
+    # Build Frontend
+    log_info "Build frontend..."
+    npm run build | tee -a "$log_file"
+    # Restart Frontend
+    log_info "Restart frontend service..."
+    npm run dev >> "$log_file" 2>&1 &
+else
+    log_info ":warning: Không tìm thấy thư mục frontend!"
+fi
+log_info "Triển khai thành công!"
