@@ -1,0 +1,6 @@
+tail -f name : tien trinh dung log in ra de xem ( khi dung thi dung lai de cho log tiep theo)
+history: truy vet lai lich su dung bash
+grep: filter theo dieu kien
+grep: tim trong file : grep -i "name filter" value
+
+
