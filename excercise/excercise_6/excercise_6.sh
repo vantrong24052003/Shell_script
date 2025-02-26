@@ -17,3 +17,4 @@ else
         log_info "Failed to restart $SERVICE."
     fi
 fi
+

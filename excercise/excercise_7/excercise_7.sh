@@ -1,7 +1,7 @@
+# bash excercise_7.sh /home/vantrong/Documents/shell_script/excercise/excercise_6
 set -e  
 set -o pipefail 
-
-DIR_FOLDER_NEED_BACKUP="/home/vantrong/Documents/shell_script/excercise/excercise_6"
+DIR_FOLDER_NEED_BACKUP=$1
 DIR_BACKUP="/home/vantrong/Documents/shell_script/excercise/excercise_7/backup"
 LOG_FILE="/home/vantrong/Documents/shell_script/excercise/excercise_4/log_$(date +%Y%m%d).log"
 
