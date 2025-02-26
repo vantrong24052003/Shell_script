@@ -10,7 +10,7 @@ log_info() {
 }
 
 if [ ! -d "$DIR_FOLDER_NEED_BACKUP" ]; then
-    log_info "Thư mục cần backup không tồn tại: $DIR_FOLDER_NEED_BACKUP"
+    log_info "The folder to backup does not exist.: $DIR_FOLDER_NEED_BACKUP"
     exit 1
 fi
 
@@ -18,13 +18,13 @@ mkdir -p "$DIR_BACKUP"
 
 BACKUP_FILE="$DIR_BACKUP/backup_$(date +%Y%m%d_%H%M%S).tar.gz"
 
-log_info "Bắt đầu backup thư mục: $DIR_FOLDER_NEED_BACKUP"
+log_info "Start backing up the folder: $DIR_FOLDER_NEED_BACKUP"
 tar -czvf "$BACKUP_FILE" -C "$(dirname "$DIR_FOLDER_NEED_BACKUP")" "$(basename "$DIR_FOLDER_NEED_BACKUP")"
 
 if [ $? -eq 0 ]; then
-    log_info "Backup thành công! File lưu tại: $BACKUP_FILE"
+    log_info "Backup successful! File saved at: $BACKUP_FILE"
 else
-    log_info "Backup thất bại!"
+    log_info "Backup failed!"
     exit 1
 fi
 

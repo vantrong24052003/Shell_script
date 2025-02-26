@@ -10,7 +10,6 @@ if systemctl is-active --quiet "$SERVICE"; then
 else
     log_info "$SERVICE is NOT running. Attempting to restart..."
     systemctl restart "$SERVICE"
-    sleep 2  
     if systemctl is-active --quiet "$SERVICE"; then
         log_info "$SERVICE restarted successfully."
     else

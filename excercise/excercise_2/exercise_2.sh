@@ -1,7 +1,5 @@
-
-
-if [ -f "/home/vantrong/Documents/shell_script/excercise/.env" ] ;then
-echo "file tồn tại"
+if [ -f "/home/vantrong/Documents/shell_script/excercise/excercise_2/.env" ] ;then
+echo "file exists"
 else 
-echo "file không tồn tại"
+echo "file does not exist"
 fi

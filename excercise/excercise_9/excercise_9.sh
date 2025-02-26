@@ -12,20 +12,20 @@ check_and_fix_permissions() {
         if [ -f "$file" ]; then
             CURRENT_PERM=$(stat -c "%a" "$file")
             if [ "$CURRENT_PERM" != "600" ]; then
-                log_info "Phát hiện file có quyền không an toàn: $file (Quyền hiện tại: $CURRENT_PERM)"
+                log_info "Detect files with unsafe permissions: $file (Current permit: $CURRENT_PERM)"
                 chmod 600 "$file"
-                log_info "Đã sửa quyền file: $file -> 600"
+                log_info "Fixed file permissions: $file -> 600"
             else
-                log_info "File $file đã có quyền an toàn (600)."
+                log_info "File $file has the right to safety (600)."
             fi
         else
-            log_info "File không tồn tại: $file"
+            log_info "File does not exist: $file"
         fi
     done
 }
 
-log_info "Bắt đầu kiểm tra quyền file..."
+log_info "Start checking file permissions..."
 check_and_fix_permissions
-log_info "Hoàn thành kiểm tra!"
+log_info "Test completed!"
 
 exit 0

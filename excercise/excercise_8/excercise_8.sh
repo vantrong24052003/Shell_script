@@ -7,7 +7,7 @@ SMTP_USERNAME="trongtk1111@gmail.com"
 SMTP_PASSWORD="yznu nuph rqkj yagy"
 TO_ADDRESS="trongdn2405@gmail.com"    
 FROM_ADDRESS="trongtk1111@gmail.com"   
-FROM_NAME="System Monitor"             
+FROM_NAME="VanTrong2405"             
 
 send_email() {
     local subject="$1"
@@ -26,9 +26,9 @@ send_email() {
           --tls
 
     if [ $? -eq 0 ]; then
-        echo "Email đã được gửi thành công."
+        echo "Email sent successfully."
     else
-        echo "Gửi email thất bại. Vui lòng kiểm tra lỗi."
+        echo "Email sending failed. Please check for errors."
     fi
 }
 
@@ -40,15 +40,15 @@ ERRORS=$(grep -E "ERROR|CRITICAL|FATAL" "$LOG_FILE" || true)
 NUM_ERRORS=$(grep -c -E "ERROR|CRITICAL|FATAL" "$LOG_FILE" || true)
 
 if [ -n "$ERRORS" ]; then
-    log_info "Phát hiện lỗi nghiêm trọng trong log hệ thống!"
+    log_info "Email sending failed. Please check for errors."
     
-    EMAIL_SUBJECT="Cảnh báo lỗi hệ thống"
-    EMAIL_BODY="Đã phát hiện $NUM_ERRORS lỗi nghiêm trọng trong log hệ thống:\n\n$ERRORS"
+    EMAIL_SUBJECT="System error warning"
+    EMAIL_BODY="$NUM_ERRORS fatal error detected in system log:\n\n$ERRORS"
     
     send_email "$EMAIL_SUBJECT" "$EMAIL_BODY"
 
 else
-    log_info "Không phát hiện lỗi nghiêm trọng nào trong log hệ thống."
+    log_info "No critical errors detected in the system log."
 fi
 
 exit 0

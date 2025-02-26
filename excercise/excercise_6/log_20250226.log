@@ -14,3 +14,9 @@
 [20250226-13:59:04] apache2 is running.
 [20250226-13:59:27] Tìm thấy script bài 6. Đang thực thi...
 [20250226-13:59:27] apache2 is running.
+[20250226-14:52:59] apache2 is running.
+[20250226-14:53:35] apache2 is NOT running. Attempting to restart...
+[20250226-14:53:41] apache2 restarted successfully.
+[20250226-14:53:52] apache2 is running.
+[20250226-14:53:58] apache2 is NOT running. Attempting to restart...
+[20250226-14:54:01] apache2 restarted successfully.
