@@ -3,7 +3,7 @@ set -o pipefail
 REPO_CLONE_SSH="https://github.com/vantrong24052003/Shopee-Clone.git"
 DIR_DEPLOY="/home/vantrong/Documents/Shopee-Clone"
 DIR_BACKUP="/home/vantrong/Documents/shell_script/excercise/excercise_4/backup"
-LOG_FILE="/home/vantrong/Documents/shell_script/excercise/excercise_4/log1_$(date +%Y%m%d).log"
+LOG_FILE="/home/vantrong/Documents/shell_script/excercise/excercise_4/log_$(date +%Y%m%d).log"
 branch_name=$1
 env=$2
 
@@ -16,7 +16,7 @@ rollback() {
     if [ -d "$DIR_BACKUP" ]; then
         rm -rf "$DIR_DEPLOY"
         rsync -av --exclude=node_modules "$DIR_BACKUP/" "$DIR_DEPLOY/"
-        log_info "Rollback thành công!" 
+        log_info "Rollback thành công!"
     else
         log_info ":warning: Không tìm thấy backup, không thể rollback!"
     fi
@@ -52,16 +52,16 @@ git -C "$DIR_DEPLOY" fetch origin
 git -C "$DIR_DEPLOY" checkout "$branch_name"
 git -C "$DIR_DEPLOY" pull origin "$branch_name"
 
-log_info "Cài đặt dependencies frontend..."
+log_info "Install dependencies..."
 if [ -d "$DIR_DEPLOY" ]; then
     cd "$DIR_DEPLOY"
-   npm install --force >> "$LOG_FILE" 2>&1 || rollback
+    npm install --force >>"$LOG_FILE" 2>&1 || rollback
 
-    log_info "Build frontend..."
+    log_info "Build..."
     npm run build | tee -a "$LOG_FILE"
 
     log_info "Restart service..."
-    npm run dev >>"$LOG_FILE" 2>&1 &
+    pm2 start npm --name "Shopee-Clone" -- run dev
 else
     log_info ":warning: Không tìm thấy thư mục!"
 fi
