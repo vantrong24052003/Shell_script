@@ -1,0 +1,14 @@
+[2025-02-26 10:34:10] Bắt đầu kiểm tra quyền file...
+[2025-02-26 10:34:10] Phát hiện file có quyền không an toàn: /etc/shadow (Quyền hiện tại: 640)
+[2025-02-26 10:34:10] Đã sửa quyền file: /etc/shadow -> 600
+[2025-02-26 10:34:10] Phát hiện file có quyền không an toàn: /etc/passwd (Quyền hiện tại: 644)
+[2025-02-26 10:34:10] Đã sửa quyền file: /etc/passwd -> 600
+[2025-02-26 10:34:10] File không tồn tại: /etc/ssh/sshd_config
+[2025-02-26 10:34:10] File không tồn tại: /home/vantrong/.ssh/id_rsa
+[2025-02-26 10:34:10] Hoàn thành kiểm tra!
+[2025-02-26 10:48:18] Bắt đầu kiểm tra quyền file...
+[2025-02-26 10:48:18] File không tồn tại: /home/vantrong/Documents/shell_script/excercise/excercise_9/secret/txt
+[2025-02-26 10:48:18] Hoàn thành kiểm tra!
+[2025-02-26 10:48:25] Bắt đầu kiểm tra quyền file...
+[2025-02-26 10:48:25] File /home/vantrong/Documents/shell_script/excercise/excercise_9/secret.txt đã có quyền an toàn (600).
+[2025-02-26 10:48:25] Hoàn thành kiểm tra!

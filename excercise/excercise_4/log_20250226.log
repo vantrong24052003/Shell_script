@@ -628,3 +628,21 @@ dist/assets/index-BIGqR9F2.js   709.42 kB │ gzip: 242.64 kB
 ✓ built in 4.46s
 [20250226-06:37:24] Restart service...
 [20250226-06:37:24] Triển khai thành công!
+[20250226-09:02:34] :warning: Khong tim thay thu muc backup
+[20250226-09:03:08] :warning: Khong tim thay thu muc backup
+[20250226-09:03:14] Tạo backup thư mục hiện tại...
+[20250226-09:03:14] backup thanh cong
+[2025-02-26 09:05:59] Bắt đầu backup thư mục: /home/vantrong/Documents/shell_script/excercise/excercise_6
+[2025-02-26 09:05:59] Backup thành công! File lưu tại: /home/vantrong/Documents/shell_script/excercise/excercise_7/backup/backup_20250226_090559.tar.gz
+[2025-02-26 09:05:59] Đã xóa các file backup cũ hơn 7 ngày.
+[2025-02-26 09:06:44] Bắt đầu backup thư mục: /home/vantrong/Documents/shell_script/excercise/excercise_6
+[2025-02-26 09:06:44] Backup thành công! File lưu tại: /home/vantrong/Documents/shell_script/excercise/excercise_7/backup/backup_20250226_090644.tar.gz
+[2025-02-26 09:06:44] Đã xóa các file backup cũ hơn 7 ngày.
+[2025-02-26 09:07:12] Bắt đầu backup thư mục: /home/vantrong/Documents/shell_script/excercise/excercise_6
+[2025-02-26 09:07:12] Backup thành công! File lưu tại: /home/vantrong/Documents/shell_script/excercise/excercise_7/backup/backup_20250226_090712.tar.gz
+[2025-02-26 09:11:04] Bắt đầu backup thư mục: /home/vantrong/Documents/shell_script/excercise/excercise_6
+[2025-02-26 09:11:04] Backup thành công! File lưu tại: /home/vantrong/Documents/shell_script/excercise/excercise_7/backup/backup_20250226_091104.tar.gz
+[2025-02-26 09:13:22] Bắt đầu backup thư mục: /home/vantrong/Documents/shell_script/excercise/excercise_6
+[2025-02-26 09:13:22] Backup thành công! File lưu tại: /home/vantrong/Documents/shell_script/excercise/excercise_7/backup/backup_20250226_091322.tar.gz
+[2025-02-26 09:21:08] Bắt đầu backup thư mục: /home/vantrong/Documents/shell_script/excercise/excercise_6
+[2025-02-26 09:21:08] Backup thành công! File lưu tại: /home/vantrong/Documents/shell_script/excercise/excercise_7/backup/backup_20250226_092108.tar.gz

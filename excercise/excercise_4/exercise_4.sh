@@ -1,5 +1,6 @@
 set -e
 set -o pipefail
+
 REPO_CLONE_SSH="https://github.com/vantrong24052003/Shopee-Clone.git"
 DIR_DEPLOY="/home/vantrong/Documents/Shopee-Clone"
 DIR_BACKUP="/home/vantrong/Documents/shell_script/excercise/excercise_4/backup"
